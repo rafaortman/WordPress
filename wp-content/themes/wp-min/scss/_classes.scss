@@ -1,0 +1,113 @@
+@for $i from 0 through 100 {
+    $j: $i * 2;
+    .m-#{$j} {
+        margin: #{$j}px !important;
+    }
+    .mt-#{$j} { 
+        margin-top: #{$j}px !important;
+    }
+    .mb-#{$j} {
+        margin-bottom: #{$j}px !important;
+    }
+    .ml-#{$j} {
+        margin-left: #{$j}px !important;
+    }
+    .mr-#{$j} {
+        margin-right: #{$j}px !important;
+    }
+    .p-#{$j} {
+        padding: #{$j}px !important;
+    }
+    .pt-#{$j} {
+        padding-top: #{$j}px !important;
+    }
+    .pb-#{$j} {
+        padding-bottom: #{$j}px !important;
+    }
+    .pl-#{$j} {
+        padding-left: #{$j}px !important;
+    }
+    .pr-#{$j} {
+        padding-right: #{$j}px !important;
+    }
+    .height-#{$j} {
+        height: #{$j}px !important;
+    }
+    .width-#{$j} {
+        width: #{$j}px !important;
+    }
+}
+
+$list: center, right, left;
+
+@each $pos in $list {
+    .ta#{str-slice($pos, 1, 1)} {
+        text-align: $pos;
+    }
+}
+
+$sizes: 1600, 1200, 1024, 768, 640, 480, 400;
+
+@each $size in $sizes {
+    .max#{$size} {
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: #{$size}px;
+    }
+}
+
+$displays: block, flex, grid, inline, inline-block, inline-flex;
+
+@each $display in $displays {
+    .display-#{$display} {
+        display: #{$display};
+    }
+}
+
+.sr-only, 
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+
+    iframe, video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.wpcf7-form {
+    p {
+        margin: 0;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    br {
+        display: none;
+    }
+}
+
+@mixin v_align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
