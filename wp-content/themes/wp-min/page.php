@@ -1,8 +1,14 @@
 <!-- page.php -->
 <?php get_header(); ?>
-    <?php the_title(); ?>
+<main>
+    <h2>
+        <?php the_title(); ?>
+    </h2>
     <?php the_content(); ?>
-<?php $barra_lateral = carbon_get_the_post_meta( 'barra_lateral' ); ?>
+</main>
 <hr>
-<?= $barra_lateral; ?>
+<aside>
+    <?php $barra_lateral = carbon_get_the_post_meta( 'barra_lateral' ); ?>
+    <?= $barra_lateral; ?>
+</aside>
 <?php get_footer(); ?>
