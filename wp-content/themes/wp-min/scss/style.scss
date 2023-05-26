@@ -3,3 +3,10 @@
 @import 'classes';
 @import 'header'; 
 @import 'form'; 
+
+
+#wpadminbar {
+	position: fixed !important;
+	top: unset !important;
+	bottom: 0;
+}
