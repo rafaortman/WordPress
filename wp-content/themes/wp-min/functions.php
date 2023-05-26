@@ -29,26 +29,3 @@
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
     remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
     remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    
-    //Remove unnecessary css & js
-    function wps_deregister_css_js() {
-        wp_deregister_style('wp-block-library');
-        wp_dequeue_style( 'wp-block-library' );
-        wp_deregister_style( 'dashicons' ); 
-        wp_deregister_style( 'wp-components' ); 
-    }
-
-    //Page Slug Body Class
-    function add_slug_body_class( $classes ) {
-        global $post;
-        if ( isset( $post ) ) {
-            $classes[] = $post->post_type . '-' . $post->post_name;
-        }
-        return $classes;
-    }
-    add_filter( 'body_class', 'add_slug_body_class' );
-
-    if (!is_admin()) {
-        add_action( 'wp_print_styles', 'wps_deregister_css_js', 100 );
-    }
-    show_admin_bar(false);
