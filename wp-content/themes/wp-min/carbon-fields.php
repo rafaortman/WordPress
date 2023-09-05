@@ -41,7 +41,6 @@
                         Field::make( 'rich_text', 'conteudo', 'Conteúdo' ),
                         Field::make( 'text', 'link', 'Link' ),
                         Field::make( 'image', 'imagem', 'Imagem' )
-                            ->set_value_type('url')
                     ) ),
             ) );
     }
